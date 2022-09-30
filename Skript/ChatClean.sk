@@ -1,0 +1,17 @@
+command /cleanchat [<string>]:
+	trigger:
+		if arg 1 is "혼자":
+			loop 100 times:
+				message ""
+			message "&A&L[ 채팅청소기 ] 당신의 채팅이 청소되었습니다!"
+		if arg 1 is "단체":
+			if player is op:
+				loop 100 times:
+					broadcast ""
+				broadcast "&A&L[ 채팅청소기 ] 관리자 %player%님이 여러분의 채팅을 청소했습니다"
+			else:
+				message "&C&L[ 채팅청소기 ] 단체 채팅 청소는 관리자만 가능합니다"
+				
+		if arg 1 is not "혼자" or "단체":
+			message "&C&L[ 채팅청소기 ] 명령어 사용법 : /cleanchat [<혼자/단체>]"
+	
